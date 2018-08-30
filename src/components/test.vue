@@ -1,10 +1,10 @@
 <template>
-    <div>
-      <h4>测试页面</h4>
-      <el-button @click="sweetalert">Button</el-button>
-      <div id="test" ref="test" style="width: 600px; height: 800px;"></div>
-      <font-awesome-icon icon="coffee" />
-    </div>
+  <div>
+    <h4>测试页面</h4>
+    <el-button @click="sweetalert">Button</el-button>
+    <div id="test" ref="test" style="width: 600px; height: 800px;"></div>
+    <font-awesome-icon icon="coffee" />
+  </div>
 </template>
 <script>
 export default {
@@ -52,11 +52,13 @@ export default {
           data: this.opinion
         },
         yAxis: {},
-        series: [{
-          name: '销量',
-          type: 'bar',
-          data: [4,7,12,10]
-        }]
+        series: [
+          {
+            name: '销量',
+            type: 'bar',
+            data: [4, 7, 12, 10]
+          }
+        ]
       }
       this.chart.setOption(option)
     },

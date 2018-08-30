@@ -8,10 +8,12 @@ import ECharts from 'echarts'
 import swal from 'sweetalert2'
 import 'element-ui/lib/theme-chalk/index.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faCoffee, faBars, faDollarSign } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faCoffee)
+library.add(faBars)
+library.add(faDollarSign)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
