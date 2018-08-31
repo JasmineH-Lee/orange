@@ -200,6 +200,8 @@ export default {
     border: 1px solid #ccc;
   }
   .main {
+    min-width: @minWidth - @sideBarMaxWidth;
+    max-width: @maxWidth - @sideBarMinWidth;
     flex-grow: 1;
     // width: 100% - @sideBarWidth;
     border: 1px solid #333;
