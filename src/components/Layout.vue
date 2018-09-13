@@ -4,9 +4,9 @@
       <header class="head">
         <div class="head-container">
           <span class="logo">StockProject</span>
-          <div class="sidebar-icon">
+          <!-- <div class="sidebar-icon">
             <div class="sidebar-hidde-icon" @click="expand"><font-awesome-icon icon="bars" /></div>
-          </div>
+          </div> -->
           <div class="nav-container">
             <div class="nav">
               <div class="nav-item" v-for="(menu, index) in menuList" :key="index">
@@ -17,7 +17,7 @@
           <div class="operate-container">
             <div class="operate-list">
               <div class="operate-item">
-                <router-link to="/login">登录</router-link>
+                <div class="login-span" @click="login">登录</div>
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@
               </div>
             </div>
             <div class="side-bar-min" v-show="sidebar === false">
-              <div></div>
+              <div>123</div>
             </div>
           </div>
           <div class="main">
@@ -127,6 +127,9 @@ export default {
       let router = menu.router
       this.$router.push({path: router})
       console.log('router')
+    },
+    login () {
+      this.$router.push({path: '/login'})
     }
   }
 }
@@ -137,7 +140,9 @@ export default {
 @maxWidth: 1400px;
 @sideBarMinWidth: 80px;
 @sideBarMaxWidth: 200px;
-@headerBgColor: #ccc;
+@headerBgColor: #1b334b;
+@lightColor: #f5eede;
+@sidebatBgColor: #f5eede;
 
 html, body {
   margin: 0;
@@ -170,6 +175,7 @@ html, body {
         font-size: 24px;
         font-weight: 600;
         line-height: @headerHeight;
+        color: @lightColor;
       }
       .sidebar-icon {
         padding: 0 20px;
@@ -186,6 +192,7 @@ html, body {
             line-height: @headerHeight;
             padding: 0px 20px;
             cursor: pointer;
+            color: @lightColor;
           }
         }
       }
@@ -194,8 +201,10 @@ html, body {
           display: flex;
           flex-flow: row nowrap;
           .operate-item {
-            a {
+            .login-span {
               line-height: @headerHeight;
+              cursor: pointer;
+              color: @lightColor;
             }
           }
         }
@@ -225,7 +234,7 @@ html, body {
         overflow: hidden;
         .side-bar-max {
           width: @sideBarMaxWidth;
-          // border: 1px solid #ccc;
+          border: 1px solid #ccc;
           height: 100%;
           overflow: scroll;
           .side-bar-list {
@@ -240,6 +249,8 @@ html, body {
         .side-bar-min {
           width: @sideBarMinWidth;
           border: 1px solid #ccc;
+          height: 100%;
+          overflow: scroll;
         }
       }
       .main {
